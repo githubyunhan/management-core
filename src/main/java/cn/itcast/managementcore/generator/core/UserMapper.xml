@@ -258,4 +258,12 @@
       headImg = #{headImg,jdbcType=VARCHAR}
     where userId = #{userId,jdbcType=VARCHAR}
   </update>
+
+
+  <!--自定义-->
+  <!-- 实现用户登陆 -->
+  <select id="login" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select * from user
+        where loginAccount = #{loginAccount,jdbcType=VARCHAR} and loginPassword = #{loginPassword,jdbcType=VARCHAR}
+    </select>
 </mapper>

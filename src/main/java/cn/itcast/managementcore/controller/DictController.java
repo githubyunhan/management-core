@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 public class DictController {
 
     @Resource
-    DictService dictService;
+    private DictService dictService;
 
     /**
      *功能描述：实现增加字典数据

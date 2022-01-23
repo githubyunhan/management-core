@@ -27,4 +27,14 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+
+    /*自定义*/
+    /**
+     * 功能描述：实现用户的登陆
+     * @param loginAccount 用户账号
+     * @param loginPassword 用户密码
+     * @return 返回登陆结果
+     */
+    User login(@Param("loginAccount")String loginAccount, @Param("loginPassword")String loginPassword);
 }

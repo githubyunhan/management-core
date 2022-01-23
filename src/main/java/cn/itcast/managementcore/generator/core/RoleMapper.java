@@ -27,4 +27,13 @@ public interface RoleMapper {
     int updateByPrimaryKeySelective(Role record);
 
     int updateByPrimaryKey(Role record);
+
+
+    /*自定义*/
+    /**
+     * 功能描述：根据用户ID来获取该用户的相应的绑定的数据
+     * @param userId 用户ID
+     * @return 返回角色的集合
+     */
+    List<Role> getUserRoleListByUserId(@Param("userId") String userId);
 }

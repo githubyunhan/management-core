@@ -53,6 +53,23 @@ public class Tree implements Serializable {
      */
     private String fullPath;
 
+
+    /*自定义*/
+    /**
+     * 权限路径采用小写的冒号分隔
+     */
+    /*@Column(name = "powerPath")*/
+    private String powerPath;
+
+    public String getPowerPath() {
+        return powerPath;
+    }
+
+    public void setPowerPath(String powerPath) {
+        this.powerPath = powerPath;
+    }
+
+
     private static final long serialVersionUID = 1L;
 
     public Integer getTreeId() {

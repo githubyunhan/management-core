@@ -195,4 +195,13 @@
       createDate = #{createDate,jdbcType=TIMESTAMP}
     where roleId = #{roleId,jdbcType=VARCHAR}
   </update>
+
+
+  <!--自定义-->
+  <!-- 根据用户ID来获取该用户的相应的绑定的数据 -->
+  <select id="getUserRoleListByUserId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select role.*
+        from role inner join user_role on role.roleId = user_role.roleId
+        where user_role.userId = #{userid,jdbcType=VARCHAR}
+  </select>
 </mapper>
