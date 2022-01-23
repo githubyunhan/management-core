@@ -31,6 +31,13 @@ public interface UserMapper {
 
     /*自定义*/
     /**
+     * 功能描述：根据token来获取用户数据
+     * @param token token的值
+     * @return 返回获取的结果
+     */
+    User getUserInfo(@Param("token")String token);
+
+    /**
      * 功能描述：实现用户的登陆
      * @param loginAccount 用户账号
      * @param loginPassword 用户密码

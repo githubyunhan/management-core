@@ -261,9 +261,14 @@
 
 
   <!--自定义-->
+  <!-- 根据token来获取用户数据 -->
+  <select id="getUserInfo" parameterType="java.lang.String" resultMap="BaseResultMap">
+         select * from user where token = #{token}
+  </select>
+
   <!-- 实现用户登陆 -->
   <select id="login" parameterType="java.lang.String" resultMap="BaseResultMap">
         select * from user
         where loginAccount = #{loginAccount,jdbcType=VARCHAR} and loginPassword = #{loginPassword,jdbcType=VARCHAR}
-    </select>
+  </select>
 </mapper>

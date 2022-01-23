@@ -276,8 +276,14 @@
 
 
   <!--自定义-->
+  <select id="getLoginUserTree" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select tree.* from tree left join  role_tree on tree.treeId = role_tree.treeId where role_tree.roleId in
+        (select user_role.roleId from user left join user_role on user.userId = user_role.userId  where
+        user.userId = #{userId}  )
+  </select>
+
   <!-- 获取当前登录的用户的权限 -->
   <select id="getLoginUserPowerPath" resultMap="BaseResultMap">
        select tree.* from tree inner join role_tree on tree.treeId = role_tree.treeId where role_tree.roleId in (select user_role.roleId from user_role where user_role.userId = #{userId} )
-    </select>
+  </select>
 </mapper>

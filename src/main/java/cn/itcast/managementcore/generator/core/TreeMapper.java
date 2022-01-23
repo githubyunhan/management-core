@@ -31,6 +31,13 @@ public interface TreeMapper {
 
     /*自定义*/
     /**
+     * 功能描述：根据用户登录的ID来获取菜单节点的数据
+     * @param userId 用户ID
+     * @return 返回数据集合
+     */
+    List<Tree> getLoginUserTree(@Param("userId") String userId);
+
+    /**
      * 功能描述：根据用户登录的ID来获取权限数据的集合
      * @param userId 用户ID
      * @return 返回数据集合
